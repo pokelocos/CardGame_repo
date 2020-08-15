@@ -10,6 +10,6 @@ namespace CardGame
 {
     public interface ICard 
     {
-        
+        List<Property> GetProperties();
     }
 }

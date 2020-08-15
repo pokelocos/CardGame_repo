@@ -16,9 +16,9 @@ namespace MapSystem
         /// <param name="iterations"></param>
         /// <param name="maxSteps"></param>
         /// <returns></returns>
-        public static Map GenerateMap(int x,int y,int iterations,int maxSteps)
+        public static Map GenerateMap(int x, int y, int iterations, int maxSteps)
         {
-            int[,] matrix = new int[x,y];
+            int[,] matrix = new int[x, y];
 
             for (int i = 0; i < y; i++)
             {
@@ -36,12 +36,12 @@ namespace MapSystem
             {
                 var dir = rand.Next(0, 4);
                 var steps = rand.Next(0, maxSteps);
-                for (int j = 0; j < steps + 1; j++) 
+                for (int j = 0; j < steps + 1; j++)
                 {
                     switch (dir)
                     {
                         case 0:
-                            if(agent[0] - 1 >= 0)
+                            if (agent[0] - 1 >= 0)
                                 agent[0] -= 1;
                             break;
                         case 1:
@@ -63,11 +63,42 @@ namespace MapSystem
 
             }
 
+            var tiles = MatrixToTile(matrix, x, y);
+
+            var links = MakeNeigborLink(tiles);
+
+            return new Map(tiles.ToArray(), links.ToArray());
+        }
+
+
+
+        public static Map GenerateMapArenaBattle(int x, int y)
+        {
+            int[,] matrix = new int[x, y];
+
+            for (int i = 0; i < y; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    matrix[j, i] = 1;
+                }
+            }
+
+            var tiles = MatrixToTile(matrix,x,y);
+
+            var links = MakeNeigborLink(tiles);
+
+            return new Map(tiles.ToArray(), links.ToArray());
+        } 
+
+
+        private static List<Tile> MatrixToTile(int[,] matrix,int x,int y)
+        {
             var tiles = new List<Tile>();
 
             for (int i = 0; i < y; i++)
             {
-                for (int j = 0; j < x; j++) 
+                for (int j = 0; j < x; j++)
                 {
                     if (matrix[j, i] == 1)
                     {
@@ -75,25 +106,55 @@ namespace MapSystem
                     }
                 }
             }
+            return tiles;
+        }
 
+        private static List<Tile> MatrixToHextile(int[,] matrix, int x, int y)
+        {
+            throw new System.NotImplementedException();
+            
+            var tiles = new List<Tile>();
+
+            for (int i = 0; i < y; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    if(i%2 == 0)
+                    {
+                        if (matrix[j, i] == 1)
+                        {
+                            tiles.Add(new Tile(j, i, 0));
+                        }
+                    }
+                    else
+                    {
+                        if (matrix[j, i] == 1)
+                        {
+                            tiles.Add(new Tile(j + 0.5f, i, 0));
+                        }
+                    }
+                }
+            }
+            return tiles;
+        }
+
+        private static List<Tuple<int, int>> MakeNeigborLink(List<Tile> tiles)
+        {
             List<Tuple<int, int>> links = new List<Tuple<int, int>>();
             for (int i = 0; i < tiles.Count; i++)
             {
                 for (int j = 0; j < tiles.Count; j++)
                 {
-                    if(tiles[i].Position.Equals(new Vector3 (tiles[j].Position.x + 1, tiles[j].Position.y, tiles[j].Position.z))||
-                        tiles[i].Position.Equals(new Vector3(tiles[j].Position.x - 1, tiles[j].Position.y, tiles[j].Position.z))||
-                        tiles[i].Position.Equals(new Vector3(tiles[j].Position.x, tiles[j].Position.y + 1, tiles[j].Position.z))||
+                    if (tiles[i].Position.Equals(new Vector3(tiles[j].Position.x + 1, tiles[j].Position.y, tiles[j].Position.z)) ||
+                        tiles[i].Position.Equals(new Vector3(tiles[j].Position.x - 1, tiles[j].Position.y, tiles[j].Position.z)) ||
+                        tiles[i].Position.Equals(new Vector3(tiles[j].Position.x, tiles[j].Position.y + 1, tiles[j].Position.z)) ||
                         tiles[i].Position.Equals(new Vector3(tiles[j].Position.x, tiles[j].Position.y - 1, tiles[j].Position.z)))
                     {
-                        links.Add(new Tuple<int, int>(i,j));
+                        links.Add(new Tuple<int, int>(i, j));
                     }
                 }
             }
-
-            return new Map(tiles.ToArray(),links.ToArray());
+            return links;
         }
-
-
     }
 }

@@ -66,21 +66,32 @@
     <Compile Include="Assets\[RA]Pack_v_0_1\Bar\Bar.cs" />
     <Compile Include="Assets\[RA]Pack_v_0_1\FollowBehaviour.cs" />
     <Compile Include="Assets\[RA]Pack_v_0_1\IDamageable.cs" />
+    <Compile Include="Assets\[RA]Pack_v_0_1\IScripdatableDatable.cs" />
     <Compile Include="Assets\[RA]Pack_v_0_1\Utils MonoBehaviours\UtilsMonoBehaviour.cs" />
-    <Compile Include="Assets\CardGame - Basic System\CardData.cs" />
-    <Compile Include="Assets\CardGame - Basic System\CardSet.cs" />
-    <Compile Include="Assets\CardGame - Basic System\DropZone.cs" />
-    <Compile Include="Assets\CardGame - Basic System\ICard.cs" />
+    <Compile Include="Assets\Battle - System\Scripts\BattleController.cs" />
+    <Compile Include="Assets\Battle - System\Scripts\BattleEntity.cs" />
+    <Compile Include="Assets\Battle - System\Scripts\BattleEntityData.cs" />
+    <Compile Include="Assets\Battle - System\Scripts\BattlePlayer.cs" />
+    <Compile Include="Assets\Battle - System\Scripts\BattlePlayerData.cs" />
+    <Compile Include="Assets\Battle - System\Scripts\Type.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Card - Editor\CardEditorWindow.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Card - Editor\Properties\Property.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Card - Editor\Properties\ValueInt.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Card - Editor\Properties\ValueString.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Scripts\CardData.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Scripts\CardSet.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Scripts\CardSetData.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Scripts\DropZone.cs" />
+    <Compile Include="Assets\CardGame - Basic System\Scripts\Interfaces\ICard.cs" />
     <Compile Include="Assets\CardGame - Extension\BehaviourCard.cs" />
     <Compile Include="Assets\CardGame - Extension\Card.cs" />
-    <Compile Include="Assets\CardGame - Extension\Characters\CharacterData.cs" />
-    <Compile Include="Assets\CardGame - Extension\Characters\ShowInfoCharacter.cs" />
     <Compile Include="Assets\CardGame - Extension\Data\CardData.cs" />
     <Compile Include="Assets\CardGame - Extension\Data\CardDataManager.cs" />
     <Compile Include="Assets\CardGame - Extension\Data\Creature.cs" />
     <Compile Include="Assets\CardGame - Extension\Data\Spell.cs" />
-    <Compile Include="Assets\CardGame - Extension\Fighter.cs" />
     <Compile Include="Assets\CardGame - Extension\Gem.cs" />
+    <Compile Include="Assets\Characters DANGER\CharacterData.cs" />
+    <Compile Include="Assets\Characters DANGER\ShowInfoCharacter.cs" />
     <Compile Include="Assets\Map - Basic System\Map.cs" />
     <Compile Include="Assets\Map - Basic System\MapGenerator.cs" />
     <Compile Include="Assets\Map - Basic System\Tile.cs" />
@@ -91,7 +102,6 @@
     <Compile Include="Assets\SaveData - System\Character.cs" />
     <Compile Include="Assets\SaveData - System\Data.cs" />
     <Compile Include="Assets\SaveData - System\DataManager.cs" />
-    <Compile Include="Assets\Scenes\BattleController.cs" />
     <Compile Include="Assets\Scenes\MainMenuController.cs" />
     <Compile Include="Assets\Scenes\MapController.cs" />
     <Compile Include="Assets\Scenes\SelectCharacterController.cs" />
@@ -99,19 +109,19 @@
     <Compile Include="Assets\TurnSystem - Basisc System\PhaseTurn.cs" />
     <Compile Include="Assets\TurnSystem - Basisc System\TurnManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -315,13 +325,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Projectos/Unity/Card_Game_Repo/CardGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Projectos/Unity/CardGame_repo/CardGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.16f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

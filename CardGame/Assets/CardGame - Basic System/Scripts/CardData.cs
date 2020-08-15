@@ -4,15 +4,10 @@ using UnityEngine;
 
 namespace CardGame
 {
+    [System.Serializable]
+    [CreateAssetMenu(fileName = "New card data", menuName = "Card game/Card data...")]
     public class CardData : ScriptableObject // esto tendria que sacarlo de aqui 
     {
-        // Visual
-        public Sprite image;
-        public string cardName;
-        public string abilityText;
-
-        // Tecnico
-        public int id;
-
+        public List<Property> properties;
     }
 }

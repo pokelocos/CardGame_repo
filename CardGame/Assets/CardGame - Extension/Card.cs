@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Card : ICard
+public class Card //: ICard
 {
     public int cardDataId;
     public List<Gem> gems;
 
     public Card(CardData cardData)
     {
-        this.cardDataId = cardData.id;
+        //this.cardDataId = cardData.id;
     }
 }

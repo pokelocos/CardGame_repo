@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace CardGame
 {
+    [SerializeField]
     public class CardSet
     {
         private int maxAmount;

@@ -29,7 +29,7 @@ public class ShowInfoCharacter : MonoBehaviour
         description.text = "";
         foreach (var item in data.cardsData)
         {
-            description.text += item.cardName;
+           // description.text += item.cardName;
             var card = (Creature)item;            
             Debug.Log(card);
             if (card != null)
